@@ -1,0 +1,311 @@
+.applications-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  min-height: 100vh;
+}
+
+.applications-card {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 8px 40px rgba(15, 23, 42, 0.08), 0 2px 16px rgba(15, 23, 42, 0.04);
+  padding: 48px 40px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.applications-title {
+  text-align: center;
+  color: #0f172a;
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  margin-bottom: 36px;
+  background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.applications-table-wrapper {
+  overflow-x: auto;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+.applications-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 850px;
+  width: 100%;
+  background: #ffffff;
+}
+
+.applications-table th,
+.applications-table td {
+  text-align: left;
+  padding: 24px 20px;
+}
+
+.applications-table th {
+  color: #64748b;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.applications-table tbody tr {
+  background: #ffffff;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.applications-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.applications-table tbody tr:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.08);
+}
+
+.applications-company {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 15px;
+}
+
+.applications-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.applications-profile-link {
+  display: flex;
+  align-items: center;
+  color: #3b82f6;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.applications-profile-link:hover {
+  color: #2563eb;
+  background: #eff6ff;
+  transform: scale(1.1);
+}
+
+.applications-date {
+  color: #64748b;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.applications-applicants {
+  font-size: 15px;
+  color: #0ea5e9;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.applications-status-badge {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  cursor: default;
+  letter-spacing: 0.3px;
+}
+
+.applications-status-applied {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  color: #1e40af;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.applications-boost-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+  font-weight: 700;
+  font-size: 13px;
+  border-radius: 24px;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.15);
+  outline: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.2px;
+}
+
+.applications-boost-btn:hover {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  box-shadow: 0 4px 16px rgba(234, 88, 12, 0.25);
+  transform: translateY(-2px);
+  border-color: #fb923c;
+}
+
+.applications-boost-icon {
+  font-size: 14px;
+  color: #f97316;
+}
+
+.applications-review {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.applications-review-doc {
+  color: #3b82f6;
+  font-size: 20px;
+}
+
+.applications-review-status {
+  color: #1e40af;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.applications-review-status:hover {
+  color: #1e3a8a;
+}
+
+.applications-review-info {
+  color: #3b82f6;
+  font-size: 14px;
+  opacity: 0.9;
+  transition: all 0.2s ease;
+}
+
+.applications-review-info:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .applications-card {
+    max-width: 95vw;
+    padding: 40px 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .applications-section {
+    padding: 32px 16px;
+  }
+  
+  .applications-card {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  
+  .applications-title {
+    font-size: 1.75rem;
+    margin-bottom: 28px;
+  }
+  
+  .applications-table th,
+  .applications-table td {
+    padding: 16px 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .applications-section {
+    padding: 24px 12px;
+  }
+  
+  .applications-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  
+  .applications-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .applications-table-wrapper {
+    border-radius: 12px;
+    margin: 0 -8px;
+  }
+  
+  .applications-table th,
+  .applications-table td {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+  
+  .applications-status-badge,
+  .applications-boost-btn {
+    font-size: 11.5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .applications-review-status {
+    font-size: 12px;
+  }
+  
+  .applications-company {
+    font-size: 13px;
+  }
+  
+  .applications-profile {
+    font-size: 12.5px;
+  }
+}
+
+/* Scrollbar Styling */
+.applications-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.applications-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 8px;
+}
+
+.applications-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 8px;
+}
+
+.applications-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,430 @@
+.appform-page {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f9fafb;
+  padding: 40px 20px;
+}
+
+.appform-card {
+  width: 100%;
+  max-width: 750px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 32px 36px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.appform-progressbar {
+  margin-bottom: 8px;
+}
+
+.appform-progress-text {
+  font-size: 11px;
+  color: #008BDC;
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.appform-progress-track {
+  width: 100%;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.appform-progress {
+  height: 100%;
+  background: #008BDC;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.appform-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0;
+  text-align: left;
+  letter-spacing: -0.3px;
+}
+
+/* Step content animation */
+.step-content {
+  animation: fadeSlideIn 0.4s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Success message styling */
+.appform-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 480px;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.appform-success .success-icon {
+  font-size: 64px;
+  color: #10b981;
+  margin-bottom: 24px;
+  animation: scaleIn 0.6s ease;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+.appform-success h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.appform-success p {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Section Headings */
+.appform-section {
+  border-bottom: 1px solid #f0f2f5;
+  padding-bottom: 20px;
+}
+
+.appform-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.appform-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 16px;
+  letter-spacing: -0.1px;
+}
+
+/* Fields Layout */
+.appform-fields-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 0;
+}
+
+.appform-section label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fafbfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6b7280;
+  margin-bottom: 0;
+  transition: all 0.2s ease;
+}
+
+.appform-section label:hover {
+  background: #ffffff;
+  border-color: #d1d5db;
+}
+
+.appform-section label:focus-within {
+  background: #ffffff;
+  border-color: #008BDC;
+  box-shadow: 0 0 0 3px rgba(0, 139, 220, 0.1);
+}
+
+.appform-section label svg {
+  color: #9ca3af;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* Input and Select Fields */
+.appform-section input,
+.appform-section select {
+  flex: 1;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #1f2937;
+  outline: none;
+}
+
+.appform-section input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.appform-section select {
+  color: #6b7280;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239ca3af' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 20px;
+}
+
+/* Resume Section */
+.resume-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.resume-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.btn-upload, 
+.btn-create {
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-upload:hover, 
+.btn-create:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.resume-preview {
+  background: #fafbfc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px 20px;
+  color: #6b7280;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 160px;
+}
+
+.preview-icon {
+  color: #9ca3af;
+  width: 32px;
+  height: 32px;
+}
+
+/* Availability Section */
+.availability-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.availability-group label {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.availability-group input[type="radio"] {
+  accent-color: #008BDC;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.availability-upload {
+  font-size: 12px;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+/* Review Summary */
+.review-summary {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.review-summary p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Navigation Buttons */
+.appform-navigation {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-back,
+.btn-next,
+.btn-submit {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-back {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-back:hover {
+  background: #e5e7eb;
+}
+
+.btn-next,
+.btn-submit {
+  background: #008BDC;
+  color: white;
+}
+
+.btn-next:hover,
+.btn-submit:hover {
+  background: #0077c2;
+  box-shadow: 0 4px 12px rgba(0, 139, 220, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appform-card {
+    padding: 24px 20px;
+  }
+  .resume-group {
+    flex-direction: column;
+  }
+  .appform-navigation {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .appform-page {
+    padding: 20px 16px;
+  }
+  .appform-card {
+    padding: 20px 16px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* Error Message */
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  animation: slideDown 0.3s ease;
+}
+
+.error-message span {
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

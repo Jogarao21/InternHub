@@ -1,0 +1,19 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+
+# Node.js
+dual-login-frontend/node_modules/
+dual-login-frontend/dist/
+dual-login-frontend/build/
+
+# Environment files
+.env
+.env.local
+
+# VS Code settings
+.vscode/

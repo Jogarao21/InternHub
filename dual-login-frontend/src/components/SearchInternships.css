@@ -1,0 +1,489 @@
+.searchinternships-page {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+  font-family: "Poppins", sans-serif;
+  color: #2e3a59;
+  user-select: none;
+}
+
+/* Add vertical spacing between cards */
+.internships-grid article {
+  margin-bottom: 14px;
+}
+
+/* Filter bar (glassmorphism + blur + blue-white gradient) */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 20px 25px;
+  background: linear-gradient(120deg, rgba(59,130,246,0.3), rgba(232,245,252,0.45));
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(59, 130, 246, 0.18);
+  align-items: center;
+  margin-bottom: 30px;
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+}
+
+.filter-item {
+  position: relative;
+  flex-grow: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.filter-item label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #123a93;
+  padding-left: 8px;
+}
+
+/* Styling selects & input */
+select, input[type=text] {
+  padding: 10px 14px 10px 40px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: 1.8px solid rgba(59,130,246,0.15);
+  background: #f9fbfe;
+  box-shadow: inset 0 1px 4px #d7e8ff87;
+  transition: border-color 0.3s ease;
+}
+select:focus, input[type=text]:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 6px 3px rgba(59,130,246,0.3);
+}
+
+/* Icons inside input/select */
+.filter-item svg {
+  position: absolute;
+  top: 38px;
+  left: 10px;
+  color: #2563ebcc;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+/* Autocomplete suggestions */
+.autocomplete-wrapper {
+  position: relative;
+}
+.autocomplete-list {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  border-radius: 12px;
+  box-shadow: 0 6px 22px #3b82f622, 0 1.5px 9px #d7e9ff44;
+  background: white;
+  z-index: 15;
+  max-height: 170px;
+  overflow-y: auto;
+}
+.autocomplete-list li {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.autocomplete-list li:hover,
+.autocomplete-list li.selected {
+  background: #e7f1ff;
+  color: #3b82f6;
+}
+
+/* Search and reset buttons */
+.btn-search,
+.btn-reset {
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 11px 28px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, box-shadow 0.35s ease, transform 0.15s ease;
+}
+
+.btn-search {
+  color: white;
+  background: linear-gradient(90deg, #3b82f6 60%, #2563eb 100%);
+  box-shadow: 0 3px 10px #3b82f6bb;
+}
+.btn-search:hover,
+.btn-search:focus {
+  box-shadow: 0 6px 32px #3b82f6cc;
+  outline: none;
+  transform: scale(1.03);
+}
+
+.btn-reset {
+  color: #3b82f6;
+  background: #e6f1ffb5;
+}
+.btn-reset:hover,
+.btn-reset:focus {
+  background: #c6d9fe;
+  box-shadow: 0 2px 7px #b2d1ff;
+  outline: none;
+}
+
+/* Header above cards */
+.search-header {
+  margin: 8px 0 14px 0;
+  text-align: center;
+  color: #202540;
+}
+.search-header h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.search-header p {
+  font-size: 14px;
+  color: #516ea1;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Internship grid forces two columns */
+.internships-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Exactly two per row */
+  width: 100%;
+  gap: 14px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Single internship card */
+.internship-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.internship-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-header-text h3 {
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.company-name {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6b7280;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 11px;
+  color: #3b82f6;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Location, stipend, duration row */
+.card-info-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.card-info-row span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+}
+
+.card-info-row svg {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* Description */
+.internship-desc {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Skills tags */
+.skills-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.skill-tag {
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  font-size: 12px;
+  color: #4b5563;
+  font-weight: 500;
+  user-select: none;
+}
+
+.skill-tag.pastel {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+/* Footer with posted date and perks */
+.card-footer {
+  font-size: 12px;
+  color: #6b7280;
+  padding-top: 12px;
+  border-top: 1px solid #f3f4f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-footer small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+}
+
+.card-footer small svg {
+  color: #22d3ee;
+  font-size: 14px;
+}
+
+.perks {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+}
+
+.perks svg {
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+/* Card buttons - Hidden by default, shown on hover */
+.card-buttons {
+  display: none;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.internship-card:hover .card-buttons {
+  display: flex;
+}
+
+.btn-apply,
+.btn-details {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-apply {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-apply:hover {
+  background: #2563eb;
+}
+
+.btn-details {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.btn-details:hover {
+  background: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .internships-grid {
+    grid-template-columns: 1fr !important; /* 1 column on small devices */
+  }
+  
+  .internship-card {
+    padding: 16px;
+  }
+  
+  .card-info-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .card-buttons {
+    display: flex;
+  }
+}
+
+/* Responsive filter bar */
+@media (max-width: 980px) {
+  .searchinternships-page {
+    padding: 20px 12px 40px 12px;
+  }
+  .filter-bar {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 650px) {
+  .skills-tags {
+    gap: 9px;
+  }
+  .filter-bar {
+    padding: 20px 18px 20px 18px;
+  }
+  .btn-apply,
+  .btn-details {
+    font-size: 13px;
+    padding: 9.5px 18px;
+  }
+  .card-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 420px) {
+  .card-info-row {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .searchinternships-page {
+    padding: 18px 11px 36px 11px;
+  }
+  .filter-item {
+    min-width: 100%;
+  }
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 41, 59, 0.83);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 22px;
+  padding: 22px 30px;
+  max-width: 720px;
+  width: 97vw;
+  max-height: 95vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 7px 26px #527dff89;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 21px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #3b82f6;
+  transition: color 0.2s;
+}
+.close-modal-btn:hover {
+  color: #2563eb;
+}
+/* Back button styles */
+.back-to-list-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3b82f6;
+  background: #e6f0ff;
+  border: 2px solid #3b82f6;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.back-to-list-btn:hover {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 6px 20px #3b82f6aa;
+  transform: translateY(-2px);
+}
+
+.back-to-list-btn svg {
+  font-size: 18px;
+}
