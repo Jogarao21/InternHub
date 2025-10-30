@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',     # Your PostgreSQL database name
         'USER': 'postgres',          # Your PostgreSQL username
-        'PASSWORD': 'Root@12345', # Your PostgreSQL password
+        'PASSWORD': '', # Your PostgreSQL password
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -135,8 +135,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'mjogarao21@gmail.com'
-EMAIL_HOST_PASSWORD = 'xhsa eate gnhw luec'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 
 
